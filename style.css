@@ -1,0 +1,103 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+
+:root {
+  --main-bg: white;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  background: var(--main-bg);
+  margin: 0;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  transition: all 2s;
+}
+
+.quote-machine {
+  width: 550px;
+  background: white;
+  border-radius: 3px;
+  padding: 40px 50px;
+  display: grid;
+  gap: 30px;
+}
+
+.quote-wrap {
+  text-align: center;
+  font-size: 1.75em;
+  display: grid;
+  gap: 20px 0;
+  grid-template-columns: auto 1fr;
+  transition: all 0.4s;
+  opacity: 0;
+}
+
+.quote {
+  margin: 0;
+}
+
+.author {
+  grid-column: span 1 / -1;
+  justify-self: end;
+  font-size: 1rem;
+}
+
+.quote-control {
+  display: grid;
+  grid-template-columns: 40px 40px 1fr;
+  gap: 5px;
+}
+
+.quote-control > * {
+  border: none;
+  color: white;
+  background: var(--main-bg);
+  border-radius: 3px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 2s;
+}
+
+.share {
+  font-size: 1.1em;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.new__quote {
+  justify-self: end;
+}
+
+.creator {
+  color: white;
+  margin-top: 20px;
+}
+
+.quote-wrap.open {
+  opacity: 1;
+}
+
+@media (max-width: 500px) {
+  .quote {
+    font-size: 0.7em;
+  }
+  .author {
+    font-size: 0.7rem;
+  }
+  .quote-machine {
+    width: auto;
+  }
+}
